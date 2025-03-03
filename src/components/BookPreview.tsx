@@ -9,16 +9,37 @@ const BookPreview = () => {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* Book Cover */}
+          {/* Book Cover Mockup */}
           <div className="lg:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="w-64 md:w-80 aspect-[1/1.6] rounded-lg overflow-hidden shadow-[0_10px_40px_rgba(212,175,55,0.2)] transition-transform duration-500 hover:scale-[1.02]">
-                <img 
-                  src="/lovable-uploads/374ba205-af76-40fc-abc4-570c6699dda4.png" 
-                  alt="The Connection Code by Joe Polish" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative perspective-1000">
+              {/* 3D Book Mockup */}
+              <div className="book-mockup relative w-64 md:w-80 transition-transform duration-500 hover:rotate-y-5 hover:scale-105">
+                {/* Front Cover */}
+                <div className="book-cover absolute inset-0 w-full h-full rounded-r-lg rounded-b-lg overflow-hidden shadow-2xl transform-style-3d rotate-y-5">
+                  <img 
+                    src="/lovable-uploads/374ba205-af76-40fc-abc4-570c6699dda4.png" 
+                    alt="The Connection Code by Joe Polish" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
+                </div>
+                
+                {/* Book Spine */}
+                <div className="book-spine absolute left-0 w-[20px] h-full bg-gold/90 rounded-l-sm transform-style-3d origin-right rotate-y-90 shadow-md">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-navy font-bold text-sm rotate-180 writing-vertical">THE CONNECTION CODE</div>
+                  </div>
+                </div>
+                
+                {/* Book Pages Side */}
+                <div className="book-pages absolute right-0 w-[15px] h-[97%] top-[1.5%] bg-cream/95 transform-style-3d origin-left rotate-y-90 rounded-r-sm"></div>
+                
+                {/* Book Bottom */}
+                <div className="book-bottom absolute bottom-0 w-full h-[15px] bg-cream/95 transform-style-3d origin-top rotate-x-90"></div>
               </div>
+              
+              {/* Shadow beneath the book */}
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-4/5 h-4 bg-black/30 blur-md rounded-full"></div>
               
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-20 h-20 border border-gold/30 rounded-full opacity-50"></div>
@@ -79,6 +100,40 @@ const BookPreview = () => {
           </div>
         </div>
       </div>
+      
+      {/* Add book mockup styles */}
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .rotate-y-5 {
+          transform: rotateY(5deg);
+        }
+        .rotate-y-90 {
+          transform: rotateY(90deg);
+        }
+        .rotate-x-90 {
+          transform: rotateX(90deg);
+        }
+        .book-mockup {
+          height: 400px;
+          transform-style: preserve-3d;
+          transform: rotateY(5deg);
+        }
+        .writing-vertical {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+        
+        @media (max-width: 768px) {
+          .book-mockup {
+            height: 320px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

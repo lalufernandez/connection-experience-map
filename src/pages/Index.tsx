@@ -47,6 +47,25 @@ const Index = () => {
       <ConnectionMap />
       <JoinCommunity />
       <Footer />
+      
+      {/* Global styles for 3D effects */}
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .rotate-y-5 {
+          transform: rotateY(5deg);
+        }
+        .rotate-y-90 {
+          transform: rotateY(90deg);
+        }
+        .rotate-x-90 {
+          transform: rotateX(90deg);
+        }
+      `}</style>
     </div>
   );
 };
