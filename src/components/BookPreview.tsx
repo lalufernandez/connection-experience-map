@@ -102,7 +102,8 @@ const BookPreview = () => {
       </div>
       
       {/* Add book mockup styles */}
-      <style jsx>{`
+      <style>
+        {`
         .perspective-1000 {
           perspective: 1000px;
         }
@@ -133,7 +134,8 @@ const BookPreview = () => {
             height: 320px;
           }
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };

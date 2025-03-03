@@ -8,7 +8,8 @@ const StandaloneConnectionMap = () => {
       <ConnectionMap />
       
       {/* CSS Variables and Base Styles - Include this in your GHL funnel */}
-      <style jsx>{`
+      <style>
+        {`
         :root {
           --color-navy: #0D1B2A;
           --color-navy-dark: #080F18;
@@ -144,7 +145,8 @@ const StandaloneConnectionMap = () => {
             opacity: 0.7;
           }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

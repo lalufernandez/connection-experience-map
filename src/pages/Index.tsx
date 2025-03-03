@@ -49,7 +49,8 @@ const Index = () => {
       <Footer />
       
       {/* Global styles for 3D effects */}
-      <style jsx>{`
+      <style>
+        {`
         .perspective-1000 {
           perspective: 1000px;
         }
@@ -65,7 +66,8 @@ const Index = () => {
         .rotate-x-90 {
           transform: rotateX(90deg);
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
