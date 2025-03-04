@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import BookPreview from '../components/BookPreview';
 import Principles from '../components/Principles';
 import ConnectionMap from '../components/ConnectionMap';
+import TheCall from '../components/TheCall';
 import JoinCommunity from '../components/JoinCommunity';
 import Footer from '../components/Footer';
 
@@ -45,6 +46,7 @@ const Index = () => {
       <BookPreview />
       <Principles />
       <ConnectionMap />
+      <TheCall />
       <JoinCommunity />
       <Footer />
       
