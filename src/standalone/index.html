@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connection Map Demo</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #0D1B2A;
+      color: #F0E6D2;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1, h2 {
+      text-align: center;
+      color: #D4AF37;
+    }
+    
+    p {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .button {
+      display: inline-block;
+      background-color: #D4AF37;
+      color: #0D1B2A;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    
+    .button:hover {
+      background-color: #F4CF60;
+    }
+    
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .instructions {
+      background-color: rgba(27, 38, 59, 0.6);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    code {
+      display: block;
+      background-color: #1B263B;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 10px 0;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Connection Map Demo</h1>
+    <p>This is a standalone demo of the Connection Map component for Go High Level integration.</p>
+    
+    <div id="connection-map-container" style="margin: 30px 0;"></div>
+    
+    <div class="button-container">
+      <button class="button" onclick="ConnectionMap.addConnection()">Add New Connection</button>
+    </div>
+    
+    <div class="instructions">
+      <h2>How to Embed in Go High Level</h2>
+      <ol>
+        <li>Download the <code>connectionMap.js</code> file from this page.</li>
+        <li>Upload the JS file to your Go High Level site or to a CDN.</li>
+        <li>Add the following code to your GHL page:</li>
+      </ol>
+      
+      <code>
+&lt;!-- Connection Map Container --&gt;<br>
+&lt;div id="connection-map-container" style="width: 100%; max-width: 800px; margin: 0 auto;"&gt;&lt;/div&gt;<br><br>
+
+&lt;!-- Connection Map Script --&gt;<br>
+&lt;script src="path/to/connectionMap.js"&gt;&lt;/script&gt;<br>
+&lt;script&gt;<br>
+  // Initialize the Connection Map when the page is loaded<br>
+  document.addEventListener('DOMContentLoaded', function() {<br>
+    ConnectionMap.init();<br>
+  });<br>
+&lt;/script&gt;
+      </code>
+    </div>
+  </div>
+
+  <!-- Connection Map Script -->
+  <script src="connectionMap.js"></script>
+  <script>
+    // Initialize map when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      ConnectionMap.init();
+    });
+  </script>
+</body>
+</html>

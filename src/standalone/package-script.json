@@ -1,0 +1,6 @@
+
+{
+  "scripts": {
+    "build-standalone": "node build-standalone.js"
+  }
+}
